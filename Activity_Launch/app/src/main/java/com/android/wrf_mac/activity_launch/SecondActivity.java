@@ -7,46 +7,39 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class SecondActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_second);
 
         findViewById(R.id.btn_launchMA).setOnClickListener(this);
         findViewById(R.id.btn_launchSA).setOnClickListener(this);
         findViewById(R.id.btn_launchTA).setOnClickListener(this);
 
         TextView textView = (TextView) findViewById(R.id.text_view);
-        textView.setText("Task ID:" + getTaskId() + "\n" + "Current Activity:" + this.toString());
+        textView.setText(String.format("Task ID:%d\nActivity ID:%s",getTaskId(), this.toString()));
     }
 
-    @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        Log.d("MainActivity", "onNewIntent");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d("MainActivity", "onDestroy");
+        Log.d("SecondActivity", "onNewIntent");
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btn_launchMA:
-                startActivity(new Intent(MainActivity.this, MainActivity.class));
+                startActivity(new Intent(SecondActivity.this, MainActivity.class));
                 break;
 
             case R.id.btn_launchSA:
-                startActivity(new Intent(MainActivity.this, SecondActivity.class));
+                startActivity(new Intent(SecondActivity.this, SecondActivity.class));
                 break;
 
             case R.id.btn_launchTA:
-                startActivity(new Intent(MainActivity.this, ThirdActivity.class));
+                startActivity(new Intent(SecondActivity.this, ThirdActivity.class));
                 break;
         }
     }

@@ -20,12 +20,12 @@
         android:id="@+id/btn_launchSA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Launch_SA"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false"
+        android:text="Launch_SA"/>
     <Button
         android:id="@+id/btn_launchTA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Launch_TA"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false"
+        android:text="Launch_TA"/>
 </LinearLayout>
