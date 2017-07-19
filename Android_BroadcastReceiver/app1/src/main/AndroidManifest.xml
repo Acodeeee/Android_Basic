@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.android.wrf_mac.android_broadcastreceiver">
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+          package="com.android.wrf_mac.app1">
 
     <application
         android:allowBackup="true"
@@ -21,18 +18,10 @@
         </activity>
 
         <receiver
-            android:name=".BootCompleteReceiver"
-            android:enabled="true"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".Reciver_01"
+            android:name=".MyReceiver"
             android:enabled="true"
             android:exported="true">
-            <intent-filter android:priority="100">
+            <intent-filter>
                 <action android:name="com.android.wrf_mac.android_broadcastreceiver.mybroadcast"/>
             </intent-filter>
         </receiver>
